@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 //create express app
 const app = express();
 
-
+app.use(cors());
 const file = 'data.json'
 var globalData = '';
 //port at which the server will run
