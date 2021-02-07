@@ -9,7 +9,7 @@ const app = express();
 const file = 'data.json'
 var globalData = '';
 //port at which the server will run
-const port = 3100;
+const port = process.env.PORT || 3000;
 
 //create end point
 app.get("/", (request, response) => {
@@ -72,9 +72,6 @@ function checkResponseStatus(res) {
     throw new Error(`The HTTP status of the reponse: ${res.status} (${res.statusText})`);
   }
 }
-
-
-
 app.listen(port, () =>
   //a callback that will be called as soon as server start listening
   console.log(`server is listening at http://localhost:${port}`)
